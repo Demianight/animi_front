@@ -4,6 +4,7 @@ import LoginPage from "./components/LoginPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonalAccount from "./components/PersonalAccount";
+import Schedule from "./components/Schedule";
 
 const App = () => {
   // Надо добавить раутинг
@@ -11,7 +12,8 @@ const App = () => {
     <div className="container">
       <Header />
       {/* <LoginPage /> */}
-      <PersonalAccount />
+      {/* <PersonalAccount /> */}
+      <Schedule />
       <Footer />
     </div>
   );
