@@ -11,14 +11,4 @@ export const post = (url, data, config = {}) =>
 export const put = (url, data, config = {}) => apiClient.put(url, data, config);
 export const del = (url, config = {}) => apiClient.delete(url, config);
 
-export const mockApiRequest = async (url, payload) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (payload.username === "admin" && payload.password === "1234") {
-        resolve({ message: "Успешный вход!", token: "nntoken" });
-      } else {
-        reject({ message: "Неверный логин или пароль" });
-      }
-    }, 1000);
-  });
-};
+
