@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
-import { mockApiRequest } from "../services/apiService";
+
 
 const PersonalAccount = () => {
   const bookings = [
