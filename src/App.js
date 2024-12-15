@@ -8,14 +8,13 @@ import Schedule from "./components/Schedule";
 import { Route, Routes, Link } from "react-router-dom";
 
 const App = () => {
-  // Надо добавить раутинг
   return (
       <div className="container">
-        <Header />
-        {/* <LoginPage /> */}
+        <Header /> 
         <Routes>
           <Route path="/personalaccount" element={<PersonalAccount />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/login" element={<LoginPage />}/>
         </Routes>
         <Footer />
       </div>
