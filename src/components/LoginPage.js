@@ -3,7 +3,6 @@ import "../App.css";
 import { post } from "../services/apiService";
 import { useNavigate } from "react-router-dom";
 
-
 const LoginForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -19,16 +18,12 @@ const LoginForm = () => {
     try {
       const url = "/users/"; // Relative endpoint
       const data = { username, password };
-    
+
       const response = await post(url, data); // Send POST request using the post function
-    
+
       if (response.status !== 201) {
         throw new Error("Ошибка создания пользователя");
       }
-    
-      const responseData = response.data;
-      alert("Пользователь успешно создан!");
-      console.log("Созданный пользователь:", responseData); // Optional: log the response for debugging
     } catch (error) {
       setError(error.message || "Произошла ошибка при создании пользователя");
     } finally {
@@ -38,24 +33,25 @@ const LoginForm = () => {
     try {
       const url = "/users/login";
       const data = { username, password };
-    
-      const response = await post(url, data); 
-    
+
+      const response = await post(url, data);
+
       if (response.status !== 200) {
         throw new Error("Неверный логин или пароль");
       }
-    
+
       const responseData = response.data;
-      
+
       localStorage.setItem("token", responseData);
-        
+      localStorage.setItem("username", username);
     } catch (error) {
       setError(error.message || "Произошла ошибка");
     } finally {
       setLoading(false);
     }
-    navigate("/Schedule");
-  }
+    window.dispatchEvent(new Event("storage"));
+    navigate("/schedule");
+  };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
