@@ -25,14 +25,13 @@ function Newblock(props) {
       block_id: ele.block_id,
       booked_by_id: null,
       id: ele.id,
-      status: "available",
+      status: "",
     },
   };
 
   const isLastColumn = ele.column + 1 === columns;
   const needsBreak = isLastColumn;
-
-  if (ele.booked_by_id != null && ele.booked_by_id != props.user.id) {
+  if (ele.booked_by_id !== null && ele.booked_by_id !== props.user.id) {
     return (
       <SeatButton
         className="seatbusy"
@@ -41,8 +40,10 @@ function Newblock(props) {
       />
     );
   }
-
-  if (ele.booked_by_id == props.user.id) {
+  if (
+    (props.clicked === 1 && ele.id === chosen.seat.id) ||
+    ele.booked_by_id === props.user.id
+  ) {
     return (
       <SeatButton
         className="seatyour"

@@ -34,6 +34,7 @@ function HallNavigation(props) {
           key: key,
         }}
         user={props.user}
+        status={props.status}
       />
       <Bottomblock
         clicked={clicked}
@@ -45,6 +46,7 @@ function HallNavigation(props) {
         Allfunkdel={Allfunkdel}
         Changebutton={Changebutton}
         user={props.user}
+        status={props.status}
       />
     </div>
   );

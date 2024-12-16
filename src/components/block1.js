@@ -15,6 +15,7 @@ function Block1(props) {
           chosen={props.chosen}
           clicked={props.clicked}
           user={props.user}
+          status={props.status}
         />
       ))}
     </div>
