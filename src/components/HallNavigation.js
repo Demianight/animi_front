@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import * as ReactDOMClient from "react-dom/client";
-import Header from "./Header";
 import Topblock from "./topblock";
 import Bottomblock from "./bottomblock";
 
-function App(props) {
+function HallNavigation(props) {
   const [block, setBlock] = useState(0);
   const [key, setKey] = useState(0);
   const [clicked, setClicked] = useState(0);
@@ -52,4 +50,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default HallNavigation;
