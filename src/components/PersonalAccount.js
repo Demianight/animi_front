@@ -38,8 +38,6 @@ const PersonalAccount = () => {
       <h1>Ваши места</h1>
       {userData.seats.map((seat, index) => (
         <div className="card" key={index}>
-          <h2>Блок: {seat.block_id || "Не указан"}</h2>
-          <div className="info">Статус: {seat.status || "Не указан"}</div>
           <div className="row">
             <span>Ряд: {seat.row || "Не указан"}</span>
             <span> Место: {seat.column || "Не указано"}</span>
