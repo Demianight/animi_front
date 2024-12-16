@@ -1,36 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
+import { get } from "../services/apiService";
 
 const PersonalAccount = () => {
-  const bookings = [
-    {
-      subject: "Математический анализ",
-      timeSlot: "Вторая пара",
-      date: "14 Декабря, 11:10",
-      row: 10,
-      seat: 4,
-    },
-    {
-      subject: "Физика",
-      timeSlot: "Третья пара",
-      date: "14 Декабря, 13:45",
-      row: 3,
-      seat: 14,
-    },
-  ];
+  const [userData, setUserData] = useState(null); // State to store user data
+  const [loading, setLoading] = useState(true); // State to handle loading
+
+  useEffect(() => {
+    // Fetch data from /users/me
+    const fetchData = async () => {
+      try {
+        const response = await get("/users/me");
+        if (!response.status === 200)
+          throw new Error("Failed to fetch user data");
+        const data = response.data;
+        setUserData(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div className="container">Загрузка...</div>; // Loading indicator
+  }
+
+  if (!userData || !userData.seats || userData.seats.length === 0) {
+    return <div className="container">Нет забронированных мест</div>; // No bookings
+  }
 
   return (
     <div className="container">
       <h1>Ваши места</h1>
-      {bookings.map((booking, index) => (
+      {userData.seats.map((seat, index) => (
         <div className="card" key={index}>
-          <h2>{booking.subject}</h2>
-          <div className="info">
-            {booking.timeSlot}, {booking.date}
-          </div>
+          <h2>Блок: {seat.block_id || "Не указан"}</h2>
+          <div className="info">Статус: {seat.status || "Не указан"}</div>
           <div className="row">
-            <span>Ряд: {booking.row}</span>
-            <span> Место: {booking.seat}</span>
+            <span>Ряд: {seat.row || "Не указан"}</span>
+            <span> Место: {seat.column || "Не указано"}</span>
           </div>
         </div>
       ))}
