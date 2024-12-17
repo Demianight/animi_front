@@ -793,14 +793,14 @@ nav a {
 
   .seatbusy {
     position: relative;
-    height: 12px;
-    width: 12px;
-    top: -4px;
-    right: 2px;
-    background-color: rgb(217, 217, 217);
-    margin: 0px 12px 3px 5px;
+    top: 0px;
+    left: 0px;
+    height: 18px;
+    width: 18px;
+    margin: 0px 10px 3px 0px;
     border: 0;
-    border-radius: 3px;
+    border-radius: 4px;
+    background-color: rgb(217, 217, 217);
   }
 
   .seat1 {
