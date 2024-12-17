@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { del, get, post } from "../services/apiService";
 import { useParams } from "react-router-dom";
 import HallNavigation from "./HallNavigation";
+import { useNavigate } from "react-router-dom";
 
 function MainHall() {
   const { hall_id } = useParams();
   const [hall, setHall] = useState(null);
   const [check, setCheck] = useState(false);
   const [status, setStatus] = useState(false);
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -30,10 +32,20 @@ function MainHall() {
   };
 
   const Addseat = (key) => {
-    const response = post(`/seats/${key.seat.id}/book`);
-    if (response.status === 201) {
-      setStatus(true);
-    }
+    post(`/seats/${key.seat.id}/book`)
+      .then((response) => {
+        if (response.status === 201) {
+          setStatus(true);
+        }
+      })
+      .catch((error) => {
+        if (error.response.status === 403) {
+          navigate("/login");
+        }
+        if (error.response.status === 400) {
+          alert("Место в этой уже забронировано");
+        }
+      });
   };
 
   const Deletseat = (key) => {
