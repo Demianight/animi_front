@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { get } from "../services/apiService";
+import { useNavigate } from "react-router-dom";
 
 function Schedule() {
   const periods = [
@@ -8,24 +10,54 @@ function Schedule() {
     "Четвертая пара",
     "Пятая пара",
   ];
-  const schedule = [
-    {
-      id: "1",
-      group: "А-10-24",
-      subject: "Математический анализ",
-      time: "09:20 - 10:55",
-      period: "Первая пара",
-      hall: "Н-202",
-    },
-    {
-      id: "2",
-      group: "А-10-24",
-      subject: "Физика",
-      time: "13:45 - 15:20",
-      period: "Третья пара",
-      hall: "Б-200",
-    },
-  ];
+
+  // State to hold the fetched schedule data
+  const [schedule, setSchedule] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchSchedule = async () => {
+      try {
+        const response = await get("/halls");
+        const fetchedSchedule = response.data;
+
+        // Transform the fetched data into the format you need
+        const transformedSchedule = fetchedSchedule.map((lecture) => {
+          const scheduleDate = new Date(lecture.schedule);
+          const period = getPeriodForTime(scheduleDate);
+
+          return {
+            id: lecture.id.toString(),
+            subject: lecture.subject,
+            time: `${scheduleDate.getHours()}:${String(
+              scheduleDate.getMinutes()
+            ).padStart(2, "0")}`,
+            period,
+            hall: "Не указано", // You can adjust the hall field if needed
+          };
+        });
+
+        setSchedule(transformedSchedule);
+      } catch (error) {
+        console.error("Error fetching schedule:", error);
+      }
+    };
+
+    fetchSchedule();
+  }, []);
+
+  // Function to determine the period based on time
+  const getPeriodForTime = (time) => {
+    const hours = time.getHours();
+
+    if (hours >= 8 && hours < 10) return "Первая пара";
+    if (hours >= 10 && hours < 12) return "Вторая пара";
+    if (hours >= 12 && hours < 14) return "Третья пара";
+    if (hours >= 14 && hours < 16) return "Четвертая пара";
+    if (hours >= 16 && hours < 18) return "Пятая пара";
+    return "Неизвестное время";
+  };
 
   const lecturesByPeriod = periods.reduce((acc, period) => {
     acc[period] = schedule.filter((lecture) => lecture.period === period);
@@ -33,7 +65,7 @@ function Schedule() {
   }, {});
 
   const handleLectureClick = (lecture) => {
-    console.log("Clicked on lecture:", lecture);
+    navigate(`/halls/${lecture.id}`);
   };
 
   if (schedule.length === 0) {
