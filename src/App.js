@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PersonalAccount from "./components/PersonalAccount";
 import Schedule from "./components/Schedule";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MainHall from "./components/MainHall";
 
 const App = () => {
