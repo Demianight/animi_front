@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import * as ReactDOMClient from "react-dom/client";
+import React from "react";
 import Block1 from "./block1";
 
 function Bottomblock(props) {
@@ -34,7 +33,7 @@ function Bottomblock(props) {
         />
         <button
           className="Addbutton"
-          disabled={props.check || props.chosen == 0}
+          disabled={props.check || props.chosen === 0}
           type="button"
           onClick={() => props.Allfunkadd(props.chosen)}
         >
@@ -42,7 +41,7 @@ function Bottomblock(props) {
         </button>
         <button
           className="Delbutton"
-          disabled={!props.check || props.chosen == 0}
+          disabled={!props.check || props.chosen === 0}
           type="button"
           onClick={() => props.Allfunkdel(props.chosen)}
         >
