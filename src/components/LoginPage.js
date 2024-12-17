@@ -16,43 +16,54 @@ const LoginForm = () => {
     setError("");
 
     try {
-      const url = "/users/"; // Relative endpoint
-      const data = { username, password };
-
-      const response = await post(url, data); // Send POST request using the post function
-
-      if (response.status !== 201) {
-        throw new Error("Ошибка создания пользователя");
-      }
-      const user_id = response.data.id;
-      localStorage.setItem("user_id", user_id);
-    } catch (error) {
-      setError(error.message || "Произошла ошибка при создании пользователя");
+      registerUser().then(() => {
+        setTimeout(() => {
+          loginUser();
+        }, 2000);
+      });
+    } catch (err) {
+      setError("Неправильный логин или пароль");
     } finally {
       setLoading(false);
     }
+  };
 
-    try {
-      const url = "/users/login";
-      const data = { username, password };
+  const loginUser = async () => {
+    const loginUrl = "/users/login";
 
-      const response = await post(url, data);
+    post(loginUrl, { username, password })
+      .then((response) => {
+        console.log(response.data);
+        if (response.status !== 200) {
+          setError("Неправильный логин или пароль");
+          return;
+        }
 
-      if (response.status !== 200) {
-        throw new Error("Неверный логин или пароль");
-      }
+        localStorage.setItem("username", username);
+        localStorage.setItem("token", response.data);
+        window.dispatchEvent(new Event("storage"));
 
-      const responseData = response.data;
+        navigate("/schedule");
+      })
+      .catch((err) => {
+        return;
+      });
+  };
 
-      localStorage.setItem("token", responseData);
-      localStorage.setItem("username", username);
-    } catch (error) {
-      setError(error.message || "Произошла ошибка");
-    } finally {
-      setLoading(false);
-    }
-    window.dispatchEvent(new Event("storage"));
-    navigate("/schedule");
+  const registerUser = async () => {
+    const registerUrl = "/users/";
+    const userData = { username, password };
+
+    post(registerUrl, userData)
+      .then((response) => {
+        if (response.status !== 201) {
+          setError("Неправильный логин или пароль");
+        }
+        localStorage.setItem("user_id", response.data.id);
+      })
+      .catch((err) => {
+        setError("Неправильный логин или пароль");
+      });
   };
 
   return (
