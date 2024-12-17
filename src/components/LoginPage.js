@@ -24,6 +24,8 @@ const LoginForm = () => {
       if (response.status !== 201) {
         throw new Error("Ошибка создания пользователя");
       }
+      const user_id = response.data.id;
+      localStorage.setItem("user_id", user_id);
     } catch (error) {
       setError(error.message || "Произошла ошибка при создании пользователя");
     } finally {

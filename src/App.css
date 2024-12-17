@@ -30,7 +30,6 @@ nav a {
   padding-left: 30px;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -39,7 +38,6 @@ nav a {
   background-color: #f4f4f9;
   margin: 0;
 }
-
 
 .field {
   position: relative;
@@ -50,13 +48,11 @@ nav a {
   margin-bottom: 40px;
 }
 
-
 .button-wrapper {
   display: flex;
   align-items: center;
   position: relative;
 }
-
 
 .error-message {
   color: rgb(169, 69, 69);
@@ -64,7 +60,6 @@ nav a {
   margin-left: 10px;
   white-space: nowrap;
 }
-
 
 .form-container {
   background: #5ea2fa;
@@ -99,13 +94,13 @@ nav a {
   pointer-events: none;
 }
 
-.field__input:not(:placeholder-shown)+.field__label {
+.field__input:not(:placeholder-shown) + .field__label {
   color: black;
   scale: 1;
   translate: -0.5em -1.75em;
 }
 
-.field__input:focus+.field__label {
+.field__input:focus + .field__label {
   color: #141914;
 }
 
@@ -124,12 +119,11 @@ nav a {
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 6px 6px 12px rgba(128, 173, 244, 0.825),
-    -6px -6px 12px #587be3;
+  box-shadow: 6px 6px 12px rgba(128, 173, 244, 0.825), -6px -6px 12px #587be3;
 }
 
 .button::before {
-  content: '';
+  content: "";
   width: 0;
   height: 3em;
   border-radius: 30em;
@@ -137,7 +131,7 @@ nav a {
   top: 0;
   left: 17;
   background-image: linear-gradient(to right, #5ea2fa 0%, #ffffff 100%);
-  transition: .5s ease;
+  transition: 0.5s ease;
   display: block;
   z-index: -1;
 }
@@ -145,7 +139,6 @@ nav a {
 .button:hover::before {
   width: 9em;
 }
-
 
 .footer {
   margin-top: auto;
@@ -173,7 +166,6 @@ nav a {
   background-color: #f4f4f9;
   margin: 0;
 }
-
 
 .card {
   background: #fff;
@@ -234,11 +226,10 @@ nav a {
   padding: 0;
 }
 
-.schedule h1{
+.schedule h1 {
   text-align: center;
   margin-top: -70px;
   margin-left: 20px;
-
 }
 .schedule-container {
   margin-top: 20px;
@@ -252,14 +243,14 @@ nav a {
   display: flexbox;
   margin-left: -10px;
 }
-.period{
+.period {
   text-align: center;
 }
 .schedule-period {
   border: 1px solid #ccc;
-  color: #0E141A;
+  color: #0e141a;
   padding: 10px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -274,9 +265,9 @@ nav a {
   text-align: center;
 }
 
-.schedule-item:hover{
-  background-color:#f4f4f9;
-  border-radius:10px;
+.schedule-item:hover {
+  background-color: #f4f4f9;
+  border-radius: 10px;
 }
 
 .schedule-subject {
@@ -290,11 +281,11 @@ nav a {
     text-align: center;
     font-size: 15px;
   }
-  .schedule h1{
+  .schedule h1 {
     text-align: center;
     margin-left: -3px;
   }
-  .schedule h2{
+  .schedule h2 {
     font-size: 20px;
   }
   .schedule-subject {
@@ -306,7 +297,7 @@ nav a {
 
   .schedule-container {
     max-width: 80%;
-    align-items:center;
+    align-items: center;
     margin-bottom: 40%;
     margin-left: 10px;
   }
@@ -315,7 +306,7 @@ nav a {
     justify-content: right;
     gap: 10px;
   }
-  
+
   nav a {
     text-decoration: none;
     color: #141419;
@@ -325,7 +316,7 @@ nav a {
     margin-right: 5px;
     transition: background-color 0.3s, color 0.3s;
   }
-  
+
   .card {
     background: #fff;
     border-radius: 10px;
@@ -342,5 +333,693 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+}
+@media (min-width: 993px) {
+  .Topblock1:not(.iskl) {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    top: -95px;
+    padding: 5px 0px 0px 5px;
+    background: rgb(255, 255, 255, 0.5);
+    border: 0;
+  }
+
+  .Bottomblockp {
+    position: relative;
+    left: 0px;
+    top: -80px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .info {
+    position: absolute;
+    text-align: left;
+    font-size: 20px;
+    left: -150px;
+  }
+
+  .infobusy {
+    height: 21px;
+    width: 21px;
+    background-color: rgb(217, 217, 217);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infoyour {
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 248, 105);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infofree {
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 153, 242);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infochose {
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 212, 248);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 6px;
+  }
+
+  .seatch {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 6px;
+  }
+
+  .seatyour {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 6px;
+  }
+
+  .seatbusy {
+    position: relative;
+    top: -5px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 15px 3px 5px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat1 {
+    opacity: 100;
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 5px 2.5px 0px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seatch1 {
+    opacity: 100;
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 5px 2.5px 0px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seatyour1 {
+    opacity: 100;
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 5px 2.5px 0px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seatbusy1 {
+    position: relative;
+    top: -2.5px;
+    opacity: 100;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 9px 2.5px 4px;
+    border: 0;
+    border-radius: 3px;
+  }
+
+  .Addbutton {
+    position: absolute;
+    right: -300px;
+    top: 90px;
+    height: 60px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(149, 186, 254);
+    font-size: 25px;
+  }
+  .Delbutton {
+    position: absolute;
+    right: -300px;
+    top: 155px;
+    height: 60px;
+    width: 200px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(227, 208, 208);
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 993px) {
+  .Topblock1:not(.iskl) {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 6px;
+    margin-right: 6px;
+    top: -80px;
+    padding: 5px 0px 0px 5px;
+    background: rgb(255, 255, 255, 0.5);
+    border: 0;
+  }
+
+  .Bottomblockp {
+    position: relative;
+    left: 0px;
+    top: -50px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .info {
+    position: absolute;
+    text-align: left;
+    font-size: 10px;
+    left: -70px;
+  }
+
+  .infobusy {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(217, 217, 217);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infoyour {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 248, 105);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infofree {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 153, 242);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infochose {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 212, 248);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat {
+    height: 19px;
+    width: 19px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatch {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatyour {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatbusy {
+    position: relative;
+    top: -5px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 15px 3px 5px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat1 {
+    opacity: 100;
+    display: inline-block;
+    height: 15.5px;
+    width: 15.5px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 3px 1.25px 0px;
+    border: 0;
+    border-radius: 4.5px;
+  }
+
+  .seatch1 {
+    opacity: 100;
+    display: inline-block;
+    height: 15.5px;
+    width: 15.5px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 3px 1.25px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatyour1 {
+    opacity: 100;
+    display: inline-block;
+    height: 15.5px;
+    width: 15.5px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 3px 1.25px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatbusy1 {
+    position: relative;
+    top: -2.5px;
+    opacity: 100;
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .Addbutton {
+    position: relative;
+    height: 50px;
+    width: 150px;
+    left: 200px;
+    top: -207.5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(149, 186, 254);
+    font-size: 25px;
+  }
+  .Delbutton {
+    position: relative;
+    height: 50px;
+    width: 150px;
+    left: 200px;
+    top: -205px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(227, 208, 208);
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 610px) {
+  .Topblock1:not(.iskl) {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 6px;
+    margin-right: 6px;
+    top: -60px;
+    padding: 5px 0px 0px 5px;
+    background: rgb(255, 255, 255, 0.5);
+    border: 0;
+  }
+
+  .Bottomblockp {
+    position: relative;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .info {
+    position: absolute;
+    text-align: left;
+    font-size: 10px;
+    left: -46px;
+  }
+
+  .infobusy {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(217, 217, 217);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infoyour {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 248, 105);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infofree {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 153, 242);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infochose {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(105, 212, 248);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatch {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatyour {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 10px 3px 0px;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .seatbusy {
+    position: relative;
+    top: -5px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 15px 3px 5px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat1 {
+    opacity: 100;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatch1 {
+    opacity: 100;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatyour1 {
+    opacity: 100;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatbusy1 {
+    position: relative;
+    top: -2.5px;
+    opacity: 100;
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .Addbutton {
+    position: sticky;
+    height: 50px;
+    width: 150px;
+    right: 50px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(149, 186, 254);
+    font-size: 25px;
+  }
+  .Delbutton {
+    position: sticky;
+    height: 50px;
+    width: 150px;
+    top: 2.5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(227, 208, 208);
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 365px) {
+  .Topblock1:not(.iskl) {
+    position: relative;
+    margin-left: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    top: -80px;
+    padding: 5px 0px 0px 5px;
+    background: rgb(255, 255, 255, 0.5);
+    border: 0;
+  }
+
+  .Bottomblockp {
+    position: relative;
+    left: 0px;
+    top: -69px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  .info {
+    position: absolute;
+    text-align: left;
+    font-size: 8px;
+    left: -16px;
+  }
+
+  .infobusy {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(217, 217, 217);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infoyour {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(105, 248, 105);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infofree {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(105, 153, 242);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .infochose {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(105, 212, 248);
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat {
+    height: 14px;
+    width: 14px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 8px 3px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatch {
+    height: 14px;
+    width: 14px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 8px 3px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatyour {
+    height: 14px;
+    width: 14px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 8px 3px 0px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .seatbusy {
+    position: relative;
+    top: -5px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 15px 3px 5px;
+    border: 0;
+    border-radius: 5px;
+  }
+
+  .seat1 {
+    opacity: 100;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background-color: rgb(105, 153, 242);
+    margin: 0px 2px 1px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .seatch1 {
+    opacity: 100;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background-color: rgb(105, 212, 248);
+    margin: 0px 2px 1px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .seatyour1 {
+    opacity: 100;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background-color: rgb(105, 248, 105);
+    margin: 0px 2px 1px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .seatbusy1 {
+    position: relative;
+    top: -2.5px;
+    opacity: 100;
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    background-color: rgb(217, 217, 217);
+    margin: 0px 2.5px 1.25px 0px;
+    border: 0;
+    border-radius: 1px;
+  }
+
+  .Addbutton {
+    position: sticky;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(149, 186, 254);
+    font-size: 25px;
+  }
+  .Delbutton {
+    position: sticky;
+    height: 50px;
+    width: 150px;
+    top: 2.5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(227, 208, 208);
+    font-size: 25px;
   }
 }
