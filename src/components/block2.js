@@ -1,5 +1,4 @@
 import React from "react";
-import * as ReactDOMClient from "react-dom/client";
 import Newblock1 from "./Newblock1";
 
 function Block2(props) {

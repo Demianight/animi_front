@@ -1,5 +1,4 @@
 import React from "react";
-import * as ReactDOMClient from "react-dom/client";
 import Block2 from "./block2";
 
 function Topblock(props) {
@@ -7,7 +6,7 @@ function Topblock(props) {
     <div>
       <button
         style={
-          props.block == 0
+          props.block === 0
             ? {
                 background: "rgb(210,234,213)",
                 border: "2px solid rgb(122,203,107)",
@@ -29,7 +28,7 @@ function Topblock(props) {
       </button>
       <button
         style={
-          props.block == 1
+          props.block === 1
             ? {
                 background: "rgb(210,234,213)",
                 border: "2px solid rgb(122,203,107)",
@@ -51,7 +50,7 @@ function Topblock(props) {
       </button>
       <button
         style={
-          props.block == 2
+          props.block === 2
             ? {
                 background: "rgb(210,234,213)",
                 border: "2px solid rgb(122,203,107)",
@@ -73,7 +72,7 @@ function Topblock(props) {
       </button>
       <button
         style={
-          props.block == 3
+          props.block === 3
             ? {
                 background: "rgb(210,234,213)",
                 border: "2px solid rgb(122,203,107)",
