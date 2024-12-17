@@ -684,6 +684,20 @@ nav a {
 }
 
 @media (max-width: 610px) {
+  .footer {
+    margin-top: auto;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+  
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 20px solid #5ea2fa;
+    width: 100%;
+    opacity: 0;
+  }
+
   .Topblock1:not(.iskl) {
     position: relative;
     margin-left: auto;
@@ -855,6 +869,20 @@ nav a {
 }
 
 @media (max-width: 365px) {
+  .footer {
+    margin-top: auto;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+  
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    border-top: 20px solid #5ea2fa;
+    width: 100%;
+    opacity: 0;
+  }
+
   .Topblock1:not(.iskl) {
     position: relative;
     margin-left: auto;
