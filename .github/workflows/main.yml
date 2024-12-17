@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands to deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SUDO_PASSWORD }}
+        script: |
+          cd ${{ secrets.WORK_DIR }}
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull
+          npm run build
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S cp -r build/* /var/www/react-app/
+          
+          
