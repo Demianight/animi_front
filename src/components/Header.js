@@ -19,6 +19,7 @@ const Header = () => {
   const clearStorage = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("user_id");
     window.dispatchEvent(new Event("storage"));
   };
 
